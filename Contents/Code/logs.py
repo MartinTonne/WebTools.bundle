@@ -134,7 +134,7 @@ class logs(object):
 			else:
 				file = os.path.join(self.LOGDIR, fileName)
 			retFile = []
-			with io.open(file, 'rb') as content_file:
+			with io.open(file, 'r', errors='ignore') as content_file:
 				content = content_file.readlines()
 				for line in content:
 					line = line.replace('\n', '')
@@ -200,7 +200,7 @@ class logs(object):
 					else:
 						file = os.path.join(self.LOGDIR, fileName)
 					retFile = []
-					with io.open(file, 'rb') as content_file:
+					with io.open(file, 'r', errors='ignore') as content_file:
 						content = content_file.readlines()
 						for line in content:
 							line = line.replace('\n', '')
